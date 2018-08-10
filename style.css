@@ -1,0 +1,61 @@
+html, body {
+  background-color: #BADA55;
+  margin: 0;
+  padding: 0;
+}
+
+.paper {
+  --color: #EAEAEE;
+  --ruling-line: rgba(0, 0, 200, 0.7);
+  --side-line: rgba(200, 0, 0, 0.7);
+  --clear: rgba(255, 255, 255, 0);
+
+  margin: 20px 0 0 20px;
+  float: left;
+  
+  font-size: 0.24in;
+  line-height: 0.43in;
+  color: #444;
+}
+
+
+/* sizes */
+.letter {
+  height: 11in;
+  width: 8.5in;
+}
+
+/* styles */
+.graph {
+  background-color: var(--color);
+  background-image: repeating-linear-gradient(180deg, var(--ruling-line) 0.01in, var(--clear) 0.02in, var(--clear) 0.22in), 
+                    repeating-linear-gradient(90deg, var(--ruling-line) 0.01in, var(--clear) 0.02in, var(--clear) 0.22in);
+  background-position: left 0 top -0.01in,
+                       left -0.01in top 0;
+  position: relative;
+}
+
+.graph > .content {
+  margin: 0.58in 0.65in;
+}
+
+.ruled {
+  background-color: var(--color);
+  background-image: repeating-linear-gradient(180deg, var(--ruling-line) 0.01in, var(--clear) 0.02in, var(--clear) 0.22in);  
+  background-position: left 0 top -0.02in;
+  position: relative;
+}
+
+.ruled::before {
+  background-image: linear-gradient(90deg, transparent, var(--side-line), transparent);
+  content: "";
+  position: absolute;
+  width: 0.03in;
+  top: 0;
+  bottom: 0;
+  left: 0.72in;
+}
+
+.ruled > .content {
+  margin: 0.58in 0.77in;
+}
